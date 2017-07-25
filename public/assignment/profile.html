@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>Register</title>
+    <title>Profile</title>
     <!--&lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
     <!--<link href="../vendor/css/bootstrap/css/bootstrap.css" rel="stylesheet">-->
     <!--&lt;!&ndash; Bootstrap theme &ndash;&gt;-->
@@ -32,7 +32,7 @@
         <div class="col-xs-12">
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <h1>Register</h1>
+                    <h1>Profile</h1>
                 </div>
             </div>
 
@@ -40,8 +40,9 @@
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input autofocus type="text" class="form-control" name="username" id="username"
-                               placeholder="username">
+                        <input autofocus readonly value="jonsnow" type="text" class="form-control" name="username"
+                               id="username"
+                        >
                     </div>
                 </div>
             </div>
@@ -49,9 +50,9 @@
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" id="password"
-                               placeholder="password">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email"
+                               placeholder="youknowNothing@GOT.com">
                     </div>
                 </div>
             </div>
@@ -59,26 +60,45 @@
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
                     <div class="form-group">
-                        <label for="verify_password">Verify Password</label>
-                        <input type="password" class="form-control" name="verify_password" id="verify_password"
-                               placeholder="verify password">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" name="firstname" id="firstname"
+                               placeholder="Jon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-4 col-md-offset-4">
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname"
+                               placeholder="Snow">
                     </div>
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <a class="btn btn-primary btn-block" href="profile.html" role="button">Register</a>
+                    <a class="btn btn-primary btn-block" href="website-list.html" role="button">Websites</a>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <a class="btn btn-danger btn-block" href="login.html" role="button">Cancel</a>
+                    <a class="btn btn-danger btn-block" href="login.html" role="button">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="login.html">Home</a>
+        </div>
+
+    </div><!-- /.container-fluid -->
+</nav>
 </body>
 </html>

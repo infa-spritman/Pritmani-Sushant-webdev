@@ -1,8 +1,16 @@
-.sp-navbar-blue {
+body {
+   margin-top: 60px;
+}
+
+.navbar-header {
     background-color: #428bca;
     border-color: #428bca;
 }
 
-.navbar-header .sp-text-white {
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.sp-website-add {
     color: white;
 }
