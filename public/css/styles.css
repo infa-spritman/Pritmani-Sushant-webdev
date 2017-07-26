@@ -1,5 +1,6 @@
 body {
    margin-top: 60px;
+    padding-bottom: 60px;
 }
 
 
@@ -35,3 +36,4 @@ body {
         overflow-y: scroll;
     }
 }
+
