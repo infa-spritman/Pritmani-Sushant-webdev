@@ -2,15 +2,36 @@ body {
    margin-top: 60px;
 }
 
-.navbar-header {
+
+.sp-navbar-blue {
     background-color: #428bca;
     border-color: #428bca;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-brand,.navbar-default .navbar-brand:hover{
     color: white;
 }
 
-.sp-website-add {
+
+.sp-website-add,.sp-icon-white {
     color: white;
+}
+
+.sp-spilit-left {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+@media (min-width: 1200px) {
+    .col-lg-9.sp-spilit-right {
+        width: 75%;
+        position: absolute;
+        right: 0px;
+        top: 60px;
+        bottom: 60px;
+        overflow-y: scroll;
+    }
 }
