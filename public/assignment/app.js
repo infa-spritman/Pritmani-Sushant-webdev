@@ -6,9 +6,18 @@
     // what are you configuring + Provider (always ends with provider)
     function configuration($routeProvider) {
         $routeProvider
-            .when('/home', {
-                templateUrl: 'home.html'
+            .when("/", {
+                templateUrl: "home.html"
             })
+            .when('/login', {
+                templateUrl: "views/user/templates/login.view.client.html",
+                controller: "loginController",
+                controllerAs: "model"
+            })
+            .when("/register", {
+                templateUrl: "views/user/templates/register.view.client.html",
+                controller: "registerController",
+                controllerAs: "model"})
     }
 
 })();
