@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WamApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>Register</title>
+    <title>Login</title>
+    <script src="../../vendor/angular/angular.js"></script>
+    <script src = "app.js"></script>
+    <script src="controllers/login.controller.view.js"></script>
     <!--&lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
     <!--<link href="../vendor/css/bootstrap/css/bootstrap.css" rel="stylesheet">-->
     <!--&lt;!&ndash; Bootstrap theme &ndash;&gt;-->
@@ -14,7 +17,7 @@
     <!-- Bootstrap theme -->
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">-->
     <!--Custom css-->
-    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
 
 </head>
 <body>
@@ -22,59 +25,54 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">Home</a>
+            <a class="navbar-brand" href="../index.html">Home</a>
         </div>
 
     </div><!-- /.container-fluid -->
 </nav>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="loginController as model">
     <div class="row">
         <div class="col-xs-12">
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <h1>Register</h1>
+                    <h1>Login</h1>
                 </div>
             </div>
-
+            <div  ng-show="model.message" class="row">
+                <div class="col-xs-12 col-md-4 col-md-offset-4">
+                    <h3 class="alert alert-info">{{model.message}}</h3>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input required autofocus type="text" class="form-control" name="username" id="username"
+                        <input ng-model="username" autofocus type="text" class="form-control" name="username" id="username"
                                placeholder="username">
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-md-4 col-md-offset-4">
+                <div
+                     class="col-xs-12 col-md-4 col-md-offset-4">
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input required type="password" class="form-control" name="password" id="password"
+                        <input ng-model="password" type="password" class="form-control" name="password" id="password"
                                placeholder="password">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <div class="form-group">
-                        <label for="verify_password">Verify Password</label>
-                        <input required type="password" class="form-control" name="verify_password" id="verify_password"
-                               placeholder="verify password">
                     </div>
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <a class="btn btn-primary btn-block" href="profile.html" role="button">Register</a>
+                    <a ng-click="model.login(username,password)" class="btn btn-primary btn-block" role="button">Login</a>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <a class="btn btn-danger btn-block" href="login.html" role="button">Cancel</a>
+                    <a  class="btn btn-success btn-block" href="register.html" role="button">Register</a>
                 </div>
             </div>
         </div>
