@@ -2,14 +2,15 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
 
-        <p class="navbar-text pull-left">
-            <a href="#"><span class="glyphicon glyphicon-chevron-left pull-left sp-icon-white"></span></a>
-        </p>
+        <!--<p class="navbar-text pull-left">-->
+        <!--<a href="#"><span class="glyphicon glyphicon-chevron-left pull-left sp-icon-white"></span></a>-->
+        <!--</p>-->
 
         <div class="navbar-brand">Profile</div>
 
         <p class="navbar-text pull-right">
-            <a href="profile.view.client.html"><span class="glyphicon glyphicon-ok pull-right sp-icon-white"></span></a>
+            <a role="button" ng-click="model.updateUser(model.user)"><span
+                    class="glyphicon glyphicon-ok pull-right sp-icon-white"></span></a>
         </p>
 
 
@@ -24,47 +25,50 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input autofocus readonly value={{model.user.username}} type="text" class="form-control" name="username"
-                               id="username"
-                        >
+            <form action=""
+                  method="post">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-md-offset-4">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input autofocus readonly ng-model={{model.user.username}} type="text" class="form-control"
+                                   name="username"
+                                   id="username"
+                            >
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email"
-                               placeholder="youknowNothing@GOT.com">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-md-offset-4">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" id="email"
+                                   placeholder="youknowNothing@GOT.com">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <div class="form-group">
-                        <label for="firstname">First Name</label>
-                        <input type="text" class="form-control" name="firstname" id="firstname"
-                               placeholder="Jon">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-md-offset-4">
+                        <div class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" name="firstname" id="firstname"
+                                   placeholder="Jon">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <div class="form-group">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" class="form-control" name="lastname" id="lastname"
-                               placeholder="Snow">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-md-offset-4">
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="form-control" name="lastname" id="lastname"
+                                   placeholder="Snow">
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </form>
             <div class="row form-group">
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
                     <a class="btn btn-primary btn-block" href="../../website/website-list.html"
@@ -77,6 +81,7 @@
                     <a class="btn btn-danger btn-block" href="login.view.client.html" role="button">Logout</a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
