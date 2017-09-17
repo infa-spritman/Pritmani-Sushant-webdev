@@ -3,7 +3,7 @@
         .module("WamApp")
         .controller("profileController", profileController);
 
-    function profileController($location, $routeParams,userService) {
+    function profileController($routeParams, userService, $location, $rootScope) {
 
         var model = this;
 
@@ -14,7 +14,7 @@
 
         function init() {
             var userId = $routeParams["uid"];
-            var _user = userService.findUserByUserId(userId);
+            var _user = userService.findUserById(userId);
             model.user = _user;
             $rootScope.title = "Profile";
         }
