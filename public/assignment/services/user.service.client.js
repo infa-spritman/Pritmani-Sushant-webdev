@@ -4,6 +4,7 @@
         .factory('userService', userService)
 
     function userService() {
+
         var users = [
             {_id: "123", username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder"},
             {_id: "234", username: "bob", password: "bob", firstName: "Bob", lastName: "Marley"},
@@ -12,7 +13,12 @@
         ];
 
         var api = {
-            findUserById: findUserById
+            "createUser": createUser,
+            "findUserByCredentials": findUserByCredentials,
+            "findUserById": findUserById,
+            "findUserByUsername": findUserByUsername,
+            "updateUser": updateUser,
+            "deleteUser": deleteUser
         }
 
         return api
@@ -20,13 +26,57 @@
         function findUserById(userID) {
             for (var u in users) {
                 if (users[u]._id === userID) {
-                    console.log("Matched")
+
                     return users[u];
 
                 }
-
             }
             return null;
         }
+
+        function createUser(user) {
+            user._id = (new Date()).getTime() + "";
+            users.push(user);
+            return user;
+        }
+
+        function findUserByUsername(username) {
+            for (var u in users) {
+                if (users[u].username === username) {
+
+                    return users[u];
+                }
+            }
+            return null;
+        }
+
+        function updateUser(userId, user) {
+            user._id = userId;
+            for(var u in users){
+                if(users[u]._id === userId){
+                    users[u] = user;
+                }
+            }
+            return user;
+        }
+
+        function deleteUser(userId) {
+            for(var u in users){
+                if(users[u]._id === userId){
+                    delete users[u];
+                }
+            }
+        }
+
+        function findUserByCredentials(username, password) {
+            for(var u in users){
+                var _user = users[u];
+                if(_user.username === username && _user.password === password){
+                    return _user;
+                }
+            }
+            return null;
+        }
+
     }
 })();
