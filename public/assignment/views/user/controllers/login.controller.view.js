@@ -23,7 +23,7 @@
             if (found !== null) {
                 // $scope.message = "Welcome " + username
                 $rootScope.currentUser = found;
-                $location.url("user/" + found._id)
+                $location.url("/user/" + found._id)
             } else {
                 model.errorMessage = "Wrong username or Password.."
             }
